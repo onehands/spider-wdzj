@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<flow>
+    <step id="1" type="HTML_UNIT" handlerClass="com.stbbd.spider.wdzj.task.intercept.PingjiInterceptor"
+            url="http://www.wdzj.com/pingji.html"></step>
+</flow>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<flow>
+    <!-- 平台信息：已解析 -->
+    <step id="1" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.DanganHandler"
+          url="http://www.wdzj.com/wdzj/html/json/dangan_search.json"></step>
+    <!-- 平台概览：已解析-->
+    <step id="2" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.BasicInfoHandler"
+          url="http://www.wdzj.com/front_select-plat"></step>
+
+    <!-- 平台概览：http://wwwservice.wdzj.com/api/plat/platData30Days?platId=95   近30天动态分析-->
+    <step id="3" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.DongtaiInfoHandler"
+          url="http://wwwservice.wdzj.com/api/plat/platData30Days"></step>
+
+    <!--基本资料-->
+    <step id="4" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.DanganPageHandler"
+          url="http://www.wdzj.com/dangan/"></step>
+
+    <!--平台标的期限分布-->
+    <!--平台标的金额分布-->
+    <!--业务类型分布-->
+
+    <step id="5" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.FenbuHandler"
+          url="http://shuju.wdzj.com/basic-surface-"></step>
+
+    <!--利率	日序列、周序列、月序列。-->
+    <!--成交量	日序列、周序列、月序列。-->
+    <!--投资人数	日序列。-->
+    <!--借款人数	日序列。-->
+    <!--历史待还	日序列、周序列、月序列。-->
+    <!--资金净流入	日序列、周序列、月序列。-->
+
+    <step id="6" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.LilvHandler"
+          url="http://shuju.wdzj.com/wdzj-archives-chart.html"></step>
+
+
+    <!--每日核心数据-->
+    <step id="7" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.InitializeHandler"
+          url="http://shuju.wdzj.com/plat-info-initialize.html"></step>
+
+
+    <!--数据VS
+    基本数据
+    深度数据
+    -->
+    <step id="8" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.TargetHandler"
+          url="http://shuju.wdzj.com/plat-info-target.html"></step>
+
+
+    <!--待收投资人排行-->
+    <!--待还借款人排行-->
+    <step id="9" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.PingjiHandler"
+          url="http://shuju.wdzj.com/plat-info-"></step>
+
+    <step id="10" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.IndustryHandler"
+          url="http://shuju.wdzj.com/industry-p2pindex.html"></step>
+
+
+    <!--平台数量	http://shuju.wdzj.com/index-i-0-1.html-->
+    <!--区域分布		http://shuju.wdzj.com/index-i-1-1.html-->
+    <!--平台类型		http://shuju.wdzj.com/index-i-2-1.html-->
+    <!--行业成交	http://shuju.wdzj.com/index-i-4-1.html-->
+    <!--行业人气	http://shuju.wdzj.com/index-i-3-1.html-->
+    <!--行业收益率	http://shuju.wdzj.com/index-i-5-1.html-->
+    <!--行业期限	http://shuju.wdzj.com/index-i-6-1.html-->
+    <step id="11" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.IndexHandler"
+          url="http://shuju.wdzj.com/index-i-"></step>
+
+    <!--平台背景-->
+    <!--成交数据-->
+
+    <step id="12" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.CustomHandler"
+          url="http://shuju.wdzj.com/plat-data-custom.html"></step>
+
+    <!--全部停业及问题平台-->
+    <!--停业及问题平台全国趋势-->
+
+    <step id="13" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.ProblemHandler"
+          url="http://shuju.wdzj.com/problem"></step>
+
+    <!--信息批露-->
+    <!--资讯信息-->
+
+    <step id="14" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.MessageHandler"
+          url="http://www.wdzj.com/dangan/"></step>
+</flow>

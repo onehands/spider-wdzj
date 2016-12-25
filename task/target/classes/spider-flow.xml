@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<flow>
+    <!-- 平台信息 -->
+    <step id="1" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.DanganHandler"
+          url="http://www.wdzj.com/wdzj/html/json/dangan_search.json"></step>
+    <!-- 平台概览 -->
+    <step id="2" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.BasicInfoHandler"
+          url="http://www.wdzj.com/front_select-plat"></step>
+    <step id="3" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.DongtaiInfoHandler"
+          url="http://wwwservice.wdzj.com/api/plat/platData30Days"></step>
+    <step id="4" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.DanganPageHandler"
+          url="http://www.wdzj.com/dangan/"></step>
+    <step id="5" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.FenbuHandler"
+          url="http://shuju.wdzj.com/basic-surface-"></step>
+    <step id="6" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.LilvHandler"
+          url="http://shuju.wdzj.com/wdzj-archives-chart.html"></step>
+    <step id="7" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.InitializeHandler"
+          url="http://shuju.wdzj.com/plat-info-initialize.html"></step>
+    <step id="8" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.TargetHandler"
+          url="http://shuju.wdzj.com/plat-info-target.html"></step>
+    <step id="9" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.PingjiHandler"
+          url="http://shuju.wdzj.com/plat-info-"></step>
+
+    <step id="10" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.IndustryHandler"
+          url="http://shuju.wdzj.com/industry-p2pindex.html"></step>
+
+    <step id="11" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.IndexHandler"
+          url="http://shuju.wdzj.com/index-i-"></step>
+
+    <step id="12" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.CustomHandler"
+          url="http://shuju.wdzj.com/plat-data-custom.html"></step>
+
+    <step id="13" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.ProblemHandler"
+          url="http://shuju.wdzj.com/problem"></step>
+
+    <step id="14" type="HTTP_CLIENT"
+          handlerClass="com.stbbd.spider.wdzj.task.handler.MessageHandler"
+          url="http://www.wdzj.com/dangan/"></step>
+</flow>
